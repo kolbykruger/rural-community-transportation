@@ -66,7 +66,21 @@
         }
 
         .title {
-            margin: 0
+            position: relative;
+            margin: 0;
+            padding-bottom: 0.5em;
+            margin-bottom: 0.25em;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: $color-1;
+                background: linear-gradient(to right, transparent, #fff, transparent);
+            }
         }
 
         .description {

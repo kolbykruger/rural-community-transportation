@@ -1,15 +1,20 @@
-.section_heading{
+.section-heading {
+    position: relative;
     width: 100%;
     max-width: $container-width;
     margin: 0 auto;
     padding:0;
-    
-    & + *{
-        margin-top:0 !important;
-        
-        .container{
-            padding-top: 0 !important;
-        }
-        
+    padding-bottom: 0.125em;
+    margin-bottom: 0.75em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: $color-1;
+        background: linear-gradient(to right, transparent, $color-1, transparent);
     }
 }

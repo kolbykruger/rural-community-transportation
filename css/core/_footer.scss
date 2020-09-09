@@ -1,6 +1,6 @@
 .footer {
     width: 100%;
-    background: $color-grey-2;
+    background: #fff;
     margin: 1em 0 0;
 
     .container {
@@ -17,7 +17,7 @@
 
         img {
             width: 100%;
-            max-width: 100px;
+            max-width: 125px;
         }
     }
 
@@ -34,7 +34,21 @@
         padding-right: 20px;
 
         h3 {
+            position: relative;
             font-size: 1.25rem;
+            padding-bottom: 0.125em;
+            margin-bottom: 0.75em;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: $color-1;
+                background: linear-gradient(to right, $color-1, transparent);
+            }
         }
     }
 
@@ -66,6 +80,31 @@
         margin-top: 3em;
         padding-top: 2em;
         border-top: 1px solid #ddd;
+    }
+
+    &-app {
+        margin-top: 1em;
+
+        &-group {
+            display: flex;
+            align-items: center;
+            margin: 0.25em -0.25em;
+
+            > * {
+                flex: 1;
+                margin: 0.25em;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.8;
+                }
+            }
+        }
     }
 
     .ewd {
