@@ -6,6 +6,7 @@
 @import 'vendors/formstack';
 @import 'vendors/tinymce';
 @import 'vendors/flickity';
+@import 'vendors/trillium-planner';
 
 //Core
 @import 'core/general';
@@ -54,6 +55,8 @@
     @import 'components/single_image';
     @import 'components/slideshow';
     @import 'components/table';
+    @import 'components/trip-planner';
+    @import 'components/services';
 
 //Unused
 //@import 'components/slick-arrows';

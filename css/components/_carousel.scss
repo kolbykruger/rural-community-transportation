@@ -1,12 +1,13 @@
 .carousel {
+    position: relative;
     user-select: none;
 
     .container {
         padding: 0;
+        max-width: 100%;
     }
 
     .group {
-
     }
 
     .flickity-viewport {
@@ -18,6 +19,19 @@
         width: 100%;
         position: relative;
         outline: none;
+        min-height: 100vh;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $color-1;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.25));
+            z-index: 1;
+        }
 
         a {
             user-select: none;
@@ -27,34 +41,89 @@
         img {
             user-select: none;
             width: 100%;
-            height: auto;
+            height: 100vh;
+            object-fit: cover;
         }
 
         .info {
             position: absolute;
-            width: 100%;
-            bottom: 0;
+            top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
             color: #fff;
-            padding: 2em;
             text-align: center;
+            z-index: 2;
+        }
+
+        .details {
+            max-width: 768px;
+            margin: 0 auto;
         }
 
         .title {
-            margin: 0;
-            @include fluid('font-size', 1.75rem, 3rem);
-            font-weight: 600;
+            margin: 0
         }
 
         .description {
             @include fluid('font-size', 1rem, 1.75rem);
-            font-weight: 500;
+            margin-top: 1em;
         }
 
         .button {
             margin: 0.5em 0;
         }
     }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 1.5em;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.35;
+
+        &-icon {
+            width: 25px;
+            height: 45px;
+            border: 2px solid white;
+            border-radius: 1em;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+        }
+
+        &-wheel {
+            height: 4px;
+            margin: 6px auto 0;
+            display: block;
+            width: 4px;
+            background-color: white;
+            border-radius: 50%;
+            animation: 2.2s ease infinite wheel-up-down;
+
+            @keyframes wheel-up-down {
+                0% {
+                    transform: translate(0, -2px);
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(0, 8px);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
     @media (max-width: 900px) {
 
     }

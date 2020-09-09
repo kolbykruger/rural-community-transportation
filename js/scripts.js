@@ -83,3 +83,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+//Sticky Header
+const header = document.querySelector('.header');
+const headerHeight = header.scrollHeight;
+let lastScrollPos = 0;
+
+window.addEventListener('scroll', function(e) {
+    let offsetTop = window.pageYOffset;
+
+    if (offsetTop < headerHeight) {
+        header.classList.remove('sticky')
+    }
+
+    if (offsetTop >= lastScrollPos && offsetTop > headerHeight) {
+        header.classList.add('unsticky')
+        header.classList.remove('sticky')
+    }
+
+    if (offsetTop < lastScrollPos && offsetTop > headerHeight) {
+        header.classList.add('sticky')
+        header.classList.remove('unsticky')
+    }
+
+    lastScrollPos = offsetTop;
+})
