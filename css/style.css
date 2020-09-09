@@ -1019,7 +1019,7 @@ hr::before {
   display: block;
 }
 .nav li.open > a {
-  color: #32444E;
+  color: #9FB7C6;
 }
 .nav li.open ul {
   top: calc(100% + 4px);
@@ -1035,7 +1035,7 @@ hr::before {
   transition: 250ms ease;
 }
 .nav a:hover, .nav a:focus {
-  color: #3F4E43;
+  color: #9FB7C6;
 }
 .nav a i {
   font-size: 12px;
