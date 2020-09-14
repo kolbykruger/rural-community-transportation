@@ -50,7 +50,7 @@
 
     a {
         text-decoration: none;
-        color: inherit;
+
     }
 
     .post {
@@ -60,6 +60,7 @@
         overflow: hidden;
         background: #fff;
         transition: $transition-1;
+        color: inherit;
 
         &:hover,
         &:focus{
